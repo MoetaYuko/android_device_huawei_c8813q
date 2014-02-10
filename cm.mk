@@ -24,3 +24,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 	BUILD_FINGERPRINT=huawei/c8813q:4.2.2/JZO54K/223160:userdebug/release \
 	PRIVATE_BUILD_DESC="huawei-user 4.2.2 JZO54K 223160 release" \
 	BUILD_NUMBER=223160
+
+# CM packages
+PRODUCT_PACKAGES += \
+    Torch
