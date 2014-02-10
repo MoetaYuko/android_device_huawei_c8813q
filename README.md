@@ -43,7 +43,7 @@ Compilation Notes
 7)Finally you're ready to build it:
 
 	source build/envsetup.sh
-	brunch cm_C8813Q-userdebug
+	brunch cm_c8813q-userdebug
 
 感谢mandfx 秋叶随风ivan Chin-Z
 
