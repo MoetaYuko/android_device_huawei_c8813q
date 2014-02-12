@@ -39,6 +39,7 @@ Compilation Notes
 
 	cd vendor/cm
 	./get-prebuilts
+	cd ../..
 
 7)Finally you're ready to build it:
 
