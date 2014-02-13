@@ -49,4 +49,4 @@ Compilation Notes
 感谢mandfx 秋叶随风ivan Chin-Z
 
 
-存在bug：wifi便携式热点 前置摄像头 视频硬解码
+存在bug：wifi便携式热点 前置摄像头 视频硬解码 照相预览图绿屏，连续照相相机会崩溃，然后SystemUI会FC，只能重启解决
