@@ -43,6 +43,7 @@ Compilation Notes
 	export PATCHES_HUAWEI_C8813Q=1
 
 7)Finally you're ready to build it:
+
 	source build/envsetup.sh
 	brunch cm_c8813q-userdebug
 
