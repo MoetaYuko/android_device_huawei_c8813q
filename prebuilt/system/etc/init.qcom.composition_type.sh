@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# Copyright (c) 2011-2012, Code Aurora Forum. All rights reserved.
+# Copyright (c) 2011-2012, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -8,7 +8,7 @@
 #     * Redistributions in binary form must reproduce the above copyright
 #       notice, this list of conditions and the following disclaimer in the
 #       documentation and/or other materials provided with the distribution.
-#     * Neither the name of Code Aurora nor
+#     * Neither the name of The Linux Foundation nor
 #       the names of its contributors may be used to endorse or promote
 #       products derived from this software without specific prior written
 #       permission.
@@ -30,22 +30,28 @@ soc_id=`cat /sys/devices/system/soc/soc0/id`
 
 # set default composition for MSM7627A
 case $soc_id in
+#/*< DTS2013012605596 huchunhua 20130126 begin */
+#/*rerutn back to qcom 3027*/
      90 | 91 | 92 | 97 | 101 | 102 | 103 | 136)
+#/* DTS2013012605596 huchunhua 20130126 end >*/
         comp_7x27A=`getprop debug.composition.7x27A.type`
         setprop debug.composition.type $comp_7x27A
         setprop ro.hw_plat 7x27A
         buildid=`cat /sys/devices/system/soc/soc0/build_id`
         offset_1=0
         offset_2=6
+        offset_3=4
         length=1
         is_unicorn=7
         dsp_lpa_enabled=2
         modemid_1=${buildid:$offset_1:$length}
         modemid_2=${buildid:$offset_2:$length}
-        if [ "$modemid_1" = "$is_unicorn" ] && [ "$modemid_2" -gt "$dsp_lpa_enabled" ]; then
+        modemid_3=${buildid:$offset_3:$length}
+        if [ "$modemid_1" = "$is_unicorn" ] && [ "$modemid_2" -gt "$dsp_lpa_enabled" -o "$modemid_3" = "S" ]; then
            setprop lpa.decode true
            setprop audio.decoder_override_check true
            setprop use.non-omx.mp3.decoder true
+           setprop use.non-omx.aac.decoder true
         else
            setprop lpa.decode false
         fi
@@ -70,6 +76,7 @@ case $soc_id in
            setprop lpa.decode true
            setprop audio.decoder_override_check true
            setprop use.non-omx.mp3.decoder true
+           setprop use.non-omx.aac.decoder true
         else
            setprop lpa.decode false
         fi
@@ -78,15 +85,18 @@ esac
 
 # set default composition for MSM8625
 #/* < DTS2012061404542 sujunfeng 20120614 begin */
+#/* < DTS2012092002075 fengqiu 20120920 begin */
 case $soc_id in
-     127 | 128 | 129 | 137)
+     127 | 128 | 129 | 137 | 167 | 168 | 169 | 170)
         comp_8x25=`getprop debug.composition.8x25.type`
         setprop debug.composition.type $comp_8x25
         setprop ro.hw_plat 8x25
         setprop lpa.decode false
         setprop audio.decoder_override_check true
         setprop use.non-omx.mp3.decoder true
+        setprop use.non-omx.aac.decoder true
         setprop ro.qc.sdk.audio.fluencetype fluence
     ;;
 esac
+#/* DTS2012092002075 fengqiu 20120920 end > */
 #/* DTS2012061404542 sujunfeng 20120614 end > */

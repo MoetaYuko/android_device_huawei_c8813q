@@ -1,4 +1,4 @@
-USE_CAMERA_STUB := false
+USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
 -include vendor/huawei/c8813q/BoardConfigVendor.mk
@@ -9,7 +9,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/huawei/c8813q/include
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-TARGET_BOARD_PLATFORM := msm7x27a
+TARGET_BOARD_PLATFORM := msm7627a
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 TARGET_ARCH := arm
@@ -48,7 +48,6 @@ TARGET_PROVIDES_LIBAUDIO := true
 
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
-
 BOARD_USES_QCOM_LIBS := true
 
 # GPS
@@ -60,7 +59,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 # Bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/huawei/c8813q/bluetooth/vnd_c8813q.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/c8813q/bluetooth
-BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_BLUETOOTH := true
 
 # RIL
 BOARD_RIL_CLASS := ../../../device/huawei/c8813q/ril/
@@ -97,6 +96,8 @@ WIFI_TEST_INTERFACE              := "sta"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_FW_PATH_P2P          := "p2p"
+BOARD_HAVE_HUAWEI_WIFI := true
+BOARD_HAS_ATH_WLAN := true
 
 # Partition sizes
 TARGET_USERIMAGES_USE_EXT4 := true

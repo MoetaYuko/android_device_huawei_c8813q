@@ -26,9 +26,6 @@ Compilation Notes
 	  <project remote="github" revision="cm-10.1" name="dianlujitao/android_device_huawei_c8813q" path="device/huawei/c8813q"/>
 	  <project remote="github" revision="3.4.0" name="dianlujitao/android_kernel_huawei_c8813q" path="kernel/huawei/c8813q"/>
 	  <project remote="github" revision="cm-10.1" name="dianlujitao/android_vendor_huawei_c8813q" path="vendor/huawei/c8813q"/>
-	  <project remote="github" revision="cm-10.1" name="dianlujitao/android_hardware_qcom_display-legacy" path="hardware/qcom/display-legacy"/>
-	  <project remote="github" revision="cm-10.1" name="dianlujitao/android_hardware_qcom_media-legacy" path="hardware/qcom/media-legacy"/>
-	  <project remote="github" revision="cm-10.1" name="dianlujitao/android_hardware_atheros_wifi_libs" path="hardware/atheros/wifi/libs"/>
 	</manifest>
 
 5)Now type this command:
@@ -41,12 +38,15 @@ Compilation Notes
 	./get-prebuilts
 	cd ../..
 
-7)Finally you're ready to build it:
+!)If this is the first time you build the source,run the next command to apply patches:
 
+	export PATCHES_HUAWEI_C8813Q=1
+
+7)Finally you're ready to build it:
 	source build/envsetup.sh
 	brunch cm_c8813q-userdebug
 
-感谢mandfx 秋叶随风ivan Chin-Z
+感谢mandfx 秋叶随风ivan ChepKun Chin-Z
 
 
-存在bug：wifi便携式热点 前置摄像头 视频硬解码 照相预览图绿屏，连续照相相机会崩溃，然后SystemUI会FC，只能重启解决
+存在bug：wifi便携式热点 视频硬解码

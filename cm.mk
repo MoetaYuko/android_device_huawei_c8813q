@@ -5,7 +5,7 @@ TARGET_BOOTANIMATION_NAME := vertical-480x854
 $(call inherit-product, device/huawei/c8813q/c8813q.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/cdma.mk)
@@ -27,4 +27,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # CM packages
 PRODUCT_PACKAGES += \
-    Torch
+    Torch \
+    Stk

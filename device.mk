@@ -17,23 +17,29 @@ PRODUCT_PACKAGES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
-    copybit.msm7x27a \
-    gralloc.msm7x27a \
-    hwcomposer.msm7x27a \
+    copybit.msm7627a \
+    gralloc.msm7627a \
+    hwcomposer.msm7627a \
     libtilerenderer
 
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio_policy.msm7x27a \
-    audio.primary.msm7x27a \
+    audio_policy.msm7627a \
+    audio.primary.msm7627a \
     audio_policy.conf \
     libaudioutils
+
+# Network
+PRODUCT_PACKAGES += \
+    hwmac \
+    libbt-vendor \
+    libnetcmdiface
 
 # GPS
 PRODUCT_PACKAGES += \
     dexpreopt \
-    gps.msm7x27a \
+    gps.msm7627a \
     libloc_api-rpc \
     Camera
 
@@ -57,8 +63,11 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
@@ -86,14 +95,14 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8813q/ramdisk/tp/1191601.img:root/tp/1191601.img
 
 PRODUCT_COPY_FILES += \
-    device/huawei/c8813q/prebuilt/system/wifi/ath6k/athtcmd_ram.bin:system/etc/firmware/ath6k/athtcmd_ram.bin \
-    device/huawei/c8813q/prebuilt/system/wifi/ath6k/caldata.bin:system/etc/firmware/ath6k/caldata.bin \
-    device/huawei/c8813q/prebuilt/system/wifi/ath6k/caldata_MSM8X25_C8813Q.bin:system/etc/firmware/ath6k/caldata_MSM8X25_C8813Q.bin \
-    device/huawei/c8813q/prebuilt/system/wifi/ath6k/caldata_MSM8X25_C8813Q.bin:system/etc/firmware/ath6k/bdata.SD31.bin \
-    device/huawei/c8813q/prebuilt/system/wifi/ath6k/fw-3.bin:system/etc/firmware/ath6k/fw-3.bin \
-    device/huawei/c8813q/prebuilt/system/wifi/ath6k/nullTestFlow.bin:system/etc/firmware/ath6k/nullTestFlow.bin \
-    device/huawei/c8813q/prebuilt/system/wifi/ath6k/softmac:system/etc/firmware/ath6k/softmac \
-    device/huawei/c8813q/prebuilt/system/wifi/ath6k/utf.bin:system/etc/firmware/ath6k/utf.bin
+    device/huawei/c8813q/prebuilt/system/wifi/ath6k/athtcmd_ram.bin:system/wifi/ath6k/athtcmd_ram.bin \
+    device/huawei/c8813q/prebuilt/system/wifi/ath6k/caldata.bin:system/wifi/ath6k/caldata.bin \
+    device/huawei/c8813q/prebuilt/system/wifi/ath6k/caldata_MSM8X25_C8813Q.bin:system/wifi/ath6k/caldata_MSM8X25_C8813Q.bin \
+    device/huawei/c8813q/prebuilt/system/wifi/ath6k/caldata_MSM8X25_C8813Q.bin:system/wifi/ath6k/bdata.SD31.bin \
+    device/huawei/c8813q/prebuilt/system/wifi/ath6k/fw-3.bin:system/wifi/ath6k/fw-3.bin \
+    device/huawei/c8813q/prebuilt/system/wifi/ath6k/nullTestFlow.bin:system/wifi/ath6k/nullTestFlow.bin \
+    device/huawei/c8813q/prebuilt/system/wifi/ath6k/softmac:system/wifi/ath6k/softmac \
+    device/huawei/c8813q/prebuilt/system/wifi/ath6k/utf.bin:system/wifi/ath6k/utf.bin
 
 PRODUCT_COPY_FILES += \
     device/huawei/c8813q/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
@@ -138,8 +147,8 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8813q/prebuilt/system/framework/telephony-common.jar:system/framework/telephony-common.jar
 
 PRODUCT_COPY_FILES += \
-    device/huawei/c8813q/prebuilt/system/lib/modules/ar6000.ko:system/lib/modules/ar6000.ko \
-    device/huawei/c8813q/prebuilt/system/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko \
+    device/huawei/c8813q/prebuilt/system/lib/modules/ar6000.ko:root/wifi/ar6000.ko \
+    device/huawei/c8813q/prebuilt/system/lib/modules/cfg80211.ko:root/wifi/cfg80211.ko \
     device/huawei/c8813q/prebuilt/system/lib/modules/pppoe.ko:system/lib/modules/pppoe.ko \
     device/huawei/c8813q/prebuilt/system/lib/modules/pppoe_dzc.ko:system/lib/modules/pppoe_dzc.ko
 
