@@ -83,15 +83,13 @@ TARGET_FORCE_CPU_UPLOAD := true
 
 # Wi-Fi
 BOARD_WLAN_DEVICE                := ath6kl
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_ath6kl
 BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_ath6kl
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/ar6000.ko"
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_ath6kl
+WIFI_DRIVER_MODULE_PATH          := "/data/misc/wifi/load/ar6000.ko"
 WIFI_DRIVER_MODULE_NAME          := "ar6000"
-WIFI_EXT_MODULE_PATH             := "/system/lib/modules/cfg80211.ko"
-WIFI_EXT_MODULE_NAME             := "cfg80211"
 WIFI_TEST_INTERFACE              := "sta"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
