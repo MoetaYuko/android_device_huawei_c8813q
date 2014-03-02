@@ -146,10 +146,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/c8813q/prebuilt/system/framework/telephony-common.jar:system/framework/telephony-common.jar
 
-PRODUCT_COPY_FILES += \
-    device/huawei/c8813q/prebuilt/system/lib/modules/pppoe.ko:system/lib/modules/pppoe.ko \
-    device/huawei/c8813q/prebuilt/system/lib/modules/pppoe_dzc.ko:system/lib/modules/pppoe_dzc.ko
-
 
 $(call inherit-product, build/target/product/full.mk)
 
