@@ -147,8 +147,6 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8813q/prebuilt/system/framework/telephony-common.jar:system/framework/telephony-common.jar
 
 PRODUCT_COPY_FILES += \
-    device/huawei/c8813q/prebuilt/system/lib/modules/ar6000.ko:root/wifi/ar6000.ko \
-    device/huawei/c8813q/prebuilt/system/lib/modules/cfg80211.ko:root/wifi/cfg80211.ko \
     device/huawei/c8813q/prebuilt/system/lib/modules/pppoe.ko:system/lib/modules/pppoe.ko \
     device/huawei/c8813q/prebuilt/system/lib/modules/pppoe_dzc.ko:system/lib/modules/pppoe_dzc.ko
 
